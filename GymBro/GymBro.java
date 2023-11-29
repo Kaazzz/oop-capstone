@@ -3,17 +3,22 @@ package GymBro;
 import javax.swing.*;
 
 public class GymBro extends JFrame{
-    private JTextArea taOutputToDo;
     private JTextField tfUser;
     private JButton btnUser;
     private JComboBox cbxProgram;
     private JLabel lblUser;
     private JLabel lblProgram;
-    private JTextField tfExercise;
-    private JButton btnExercise;
-    private JTextArea taOutputFinished;
-    private JLabel lblExercise;
     private JPanel jpanel;
+    private JButton addProgramButton;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField numberOfRepsTextField;
+    private JTextField setNumberTextField;
+    private JTextField timerTextField;
+    private JButton finishSetButton;
+    private JButton finishProgramButton;
+    private JTextField exerciseTextField1;
+    private JComboBox comboBox1;
 
 
     public static void main(String[] args) {
