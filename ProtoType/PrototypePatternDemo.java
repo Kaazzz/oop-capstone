@@ -16,13 +16,12 @@ public class PrototypePatternDemo {
         Shape clonedShape4 = (Shape) ShapeCache.getShape("4");
         System.out.println("Shape : " + clonedShape4.getType());
 
+
         Square originalSquare = new Square();
-        System.out.println("Original Square: " + System.identityHashCode(originalSquare));
+        System.out.println("Original Square hashcode: " + System.identityHashCode(originalSquare));
 
         Square clonedSquare = (Square) ShapeCache.getShape("3");
-        System.out.println("Clone Square: " + System.identityHashCode(clonedSquare));
-
-
+        System.out.println("Clone Square hashcode: " + System.identityHashCode(clonedSquare));
 
     }
 }
