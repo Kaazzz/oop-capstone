@@ -20,12 +20,16 @@ public class ShapeCache {
         circle.setId("1");
         shapeMap.put(circle.getId(),circle);
 
+        Rectangle rectangle = new Rectangle();
+        rectangle.setId("2");
+        shapeMap.put(rectangle.getId(), rectangle);
+
         Square square = new Square();
-        square.setId("2");
+        square.setId("3");
         shapeMap.put(square.getId(),square);
 
-        Rectangle rectangle = new Rectangle();
-        rectangle.setId("3");
-        shapeMap.put(rectangle.getId(), rectangle);
+        AnotherSquare another = new AnotherSquare();
+        another.setId("4");
+        shapeMap.put(another.getId(), another);
     }
 }
