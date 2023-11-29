@@ -25,7 +25,7 @@ public class GymBro extends JFrame{
         GymBro app = new GymBro();
         app.setContentPane(app.jpanel);
         JButton btn = new JButton("lol");
-        app.setSize(540, 300);
+        app.setSize(500, 300);
         app.setDefaultCloseOperation(EXIT_ON_CLOSE);
         app.setTitle("GymBro App");
         app.setVisible(true);
