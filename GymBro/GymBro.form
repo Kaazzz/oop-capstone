@@ -87,7 +87,7 @@
           <text value="Rest Time:"/>
         </properties>
       </component>
-      <component id="da38a" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="da38a" class="javax.swing.JTextField" binding="tfRestTime">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -95,14 +95,7 @@
         </constraints>
         <properties/>
       </component>
-      <vspacer id="8391a">
-        <constraints>
-          <grid row="7" column="1" row-span="1" col-span="5" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="10" height="15"/>
-          </grid>
-        </constraints>
-      </vspacer>
-      <component id="8303" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="8303" class="javax.swing.JTextField" binding="tfNumberOfSets">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -112,14 +105,7 @@
           <text value=""/>
         </properties>
       </component>
-      <vspacer id="75032">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="10" height="15"/>
-          </grid>
-        </constraints>
-      </vspacer>
-      <component id="b4244" class="javax.swing.JButton" binding="addProgramButton" default-binding="true">
+      <component id="b4244" class="javax.swing.JButton" binding="btnAddProgram">
         <constraints>
           <grid row="6" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -127,7 +113,7 @@
           <text value="Add Program"/>
         </properties>
       </component>
-      <component id="b2812" class="javax.swing.JTextField" binding="numberOfRepsTextField" default-binding="true">
+      <component id="b2812" class="javax.swing.JTextField" binding="tfNumberOfReps">
         <constraints>
           <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -137,7 +123,7 @@
           <text value="Number of Reps"/>
         </properties>
       </component>
-      <component id="21091" class="javax.swing.JTextField" binding="setNumberTextField" default-binding="true">
+      <component id="21091" class="javax.swing.JTextField" binding="tfSetNumber">
         <constraints>
           <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -147,7 +133,7 @@
           <text value="Set Number"/>
         </properties>
       </component>
-      <component id="b0887" class="javax.swing.JTextField" binding="timerTextField" default-binding="true">
+      <component id="b0887" class="javax.swing.JTextField" binding="tfTimer">
         <constraints>
           <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -157,7 +143,7 @@
           <text value="Timer"/>
         </properties>
       </component>
-      <component id="e82ee" class="javax.swing.JButton" binding="finishSetButton" default-binding="true">
+      <component id="e82ee" class="javax.swing.JButton" binding="btnFinishSet">
         <constraints>
           <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -165,7 +151,7 @@
           <text value="Finish Set"/>
         </properties>
       </component>
-      <component id="b1b45" class="javax.swing.JButton" binding="finishProgramButton" default-binding="true">
+      <component id="b1b45" class="javax.swing.JButton" binding="btnFinishProgram">
         <constraints>
           <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -173,7 +159,7 @@
           <text value="Finish Program"/>
         </properties>
       </component>
-      <component id="92b43" class="javax.swing.JTextField" binding="exerciseTextField1" default-binding="true">
+      <component id="92b43" class="javax.swing.JTextField" binding="tfExercise">
         <constraints>
           <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -191,7 +177,7 @@
           <text value="RPE"/>
         </properties>
       </component>
-      <component id="8cf73" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+      <component id="8cf73" class="javax.swing.JComboBox" binding="cbxRPE">
         <constraints>
           <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -216,6 +202,26 @@
         </constraints>
         <properties>
           <text value="Program"/>
+        </properties>
+      </component>
+      <component id="73398" class="javax.swing.JTextArea" binding="taExercise">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="54684" class="javax.swing.JTextArea" binding="taWelcomeUser">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
         </properties>
       </component>
     </children>
