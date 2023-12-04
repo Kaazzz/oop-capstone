@@ -34,9 +34,19 @@ public class GymBro extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String userName = tfUser.getText();
-                taWelcomeUser.setText("Welcome, " + userName + "!");
+                String selectedProgram = (String) cbxProgram.getSelectedItem(); // Get the selected program
+
+                // Compare strings using equals method
+                if ("Choose a program".equals(selectedProgram)) {
+                    selectedProgram = "None"; // Use the assignment operator here
+                }
+
+                taWelcomeUser.setText("Welcome, " + userName + "!\nProgram: " + selectedProgram);
             }
         });
+
+
+
 
         btnAddProgram.addActionListener(new ActionListener() {
             @Override

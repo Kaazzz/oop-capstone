@@ -52,6 +52,7 @@
             <item value="CrossFit Workouts"/>
             <item value="Functional Fitness Programs"/>
             <item value="Specialized Programs"/>
+            <item value="HIIT (High Intensity Interval Training)"/>
           </model>
         </properties>
       </component>
