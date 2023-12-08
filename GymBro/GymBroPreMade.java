@@ -7,6 +7,11 @@ public class GymBroPreMade extends JFrame {
     private JLabel lblChooseProgram;
     private JComboBox cbxChooseProgram;
     private JTextArea taProgramsToDo;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JButton btnSubmit;
+    private JTextArea taFinishedExercises;
+    private JButton btnClear;
 
     public GymBroPreMade() {
         this.setContentPane(this.preMadePanel);

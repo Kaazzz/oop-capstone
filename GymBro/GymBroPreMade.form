@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GymBro.GymBroPreMade">
-  <grid id="27dc6" binding="preMadePanel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="preMadePanel" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -8,14 +8,280 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="52e84" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="52e84" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="d7579" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value=""/>
+                <item value="Strength Training Programs:"/>
+                <item value="&#9;Starting Strength:"/>
+                <item value="&#9;&#9;Squats"/>
+                <item value="&#9;&#9;Deadlifts"/>
+                <item value="&#9;&#9;Bench Press"/>
+                <item value="&#9;&#9;Overhead Press"/>
+                <item value="&#9;&#9;Power Cleans"/>
+                <item value="&#9;5/3/1 Program:"/>
+                <item value="&#9;&#9;Wendler 5/3/1 Squats"/>
+                <item value="&#9;&#9;Deadlifts"/>
+                <item value="&#9;&#9;Overhead Press"/>
+                <item value="&#9;&#9;Bench Press"/>
+                <item value="&#9;&#9;Assistance exercises based on the program phase"/>
+                <item value="&#9;StrongLifts 5x5:"/>
+                <item value="&#9;&#9;Squats"/>
+                <item value="&#9;&#9;Deadlifts"/>
+                <item value="&#9;&#9;Bench Press"/>
+                <item value="&#9;&#9;Barbell Rows"/>
+                <item value="&#9;&#9;Overhead Press"/>
+                <item value="&#9;Push-Pull Legs (PPL):"/>
+                <item value="&#9;&#9;Push: Bench Press, Overhead Press"/>
+                <item value="&#9;&#9;Pull: Pull-ups, Barbell Rows"/>
+                <item value="&#9;&#9;Legs: Squats, Deadlifts"/>
+                <item value="&#9;German Volume Training (GVT):"/>
+                <item value="&#9;&#9;Squats"/>
+                <item value="&#9;&#9;Bench Press"/>
+                <item value="&#9;&#9;Bent-over Rows"/>
+                <item value="&#9;&#9;Leg Press"/>
+                <item value="&#9;&#9;Incline Dumbbell Press"/>
+                <item value="Cardiovascular Programs:"/>
+                <item value="&#9;Couch to 5K (C25K):"/>
+                <item value="&#9;&#9;Brisk Walking"/>
+                <item value="&#9;&#9;Jogging"/>
+                <item value="&#9;&#9;Running Intervals"/>
+                <item value="&#9;&#9;Hill Sprints"/>
+                <item value="&#9;&#9;Cool-down Walk"/>
+                <item value="&#9;Interval Training:"/>
+                <item value="&#9;&#9;High Knees"/>
+                <item value="&#9;&#9;Burpees"/>
+                <item value="&#9;&#9;Jumping Lunges"/>
+                <item value="&#9;&#9;Mountain Climbers"/>
+                <item value="&#9;&#9;Box Jumps"/>
+                <item value="&#9;Long Slow Distance (LSD):"/>
+                <item value="&#9;&#9;Running"/>
+                <item value="&#9;&#9;Cycling"/>
+                <item value="&#9;&#9;Swimming"/>
+                <item value="&#9;&#9;Rowing"/>
+                <item value="&#9;&#9;Elliptical Training"/>
+                <item value="&#9;Tabata Training:"/>
+                <item value="&#9;&#9;Squat Jumps"/>
+                <item value="&#9;&#9;Push-ups"/>
+                <item value="&#9;&#9;Burpees"/>
+                <item value="&#9;&#9;Mountain Climbers"/>
+                <item value="&#9;&#9;Plank"/>
+                <item value="&#9;Fartlek Training:"/>
+                <item value="&#9;&#9;Variable-speed Running"/>
+                <item value="&#9;&#9;Sprint Intervals"/>
+                <item value="&#9;&#9;Jogging"/>
+                <item value="&#9;&#9;Hill Sprints"/>
+                <item value="&#9;&#9;Walking Intervals"/>
+                <item value="Flexibility and Yoga Programs:"/>
+                <item value="&#9;Yin Yoga:"/>
+                <item value="&#9;&#9;Butterfly Pose"/>
+                <item value="&#9;&#9;Dragon Pose"/>
+                <item value="&#9;&#9;Child's Pose"/>
+                <item value="&#9;&#9;Pigeon Pose"/>
+                <item value="&#9;&#9;Happy Baby Pose"/>
+                <item value="&#9;Hatha Yoga:"/>
+                <item value="&#9;&#9;Mountain Pose"/>
+                <item value="&#9;&#9;Downward-Facing Dog"/>
+                <item value="&#9;&#9;Warrior Poses (I, II, III)"/>
+                <item value="&#9;&#9;Tree Pose"/>
+                <item value="&#9;&#9;Corpse Pose"/>
+                <item value="&#9;Ashtanga Yoga:"/>
+                <item value="&#9;&#9;Sun Salutations"/>
+                <item value="&#9;&#9;Standing Poses"/>
+                <item value="&#9;&#9;Seated Poses"/>
+                <item value="&#9;&#9;Backbends"/>
+                <item value="&#9;&#9;Finishing Poses"/>
+                <item value="&#9;Iyengar Yoga:"/>
+                <item value="&#9;&#9;Tadasana (Mountain Pose)"/>
+                <item value="&#9;&#9;Utthita Trikonasana (Extended Triangle Pose)"/>
+                <item value="&#9;&#9;Virabhadrasana II (Warrior II Pose)"/>
+                <item value="&#9;&#9;Salamba Sarvangasana (Shoulder Stand)"/>
+                <item value="&#9;&#9;Savasana (Corpse Pose)"/>
+                <item value="&#9;Dynamic Stretching Routine:"/>
+                <item value="&#9;&#9;Arm Swings"/>
+                <item value="&#9;&#9;Leg Swings"/>
+                <item value="&#9;&#9;Hip Circles"/>
+                <item value="&#9;&#9;Neck Rolls"/>
+                <item value="&#9;&#9;Jumping Jacks"/>
+                <item value="Bodyweight Exercise Programs:"/>
+                <item value="&#9;Convict Conditioning:"/>
+                <item value="&#9;&#9;One-Legged Squats"/>
+                <item value="&#9;&#9;One-Arm Push-ups"/>
+                <item value="&#9;&#9;Hanging Leg Raises"/>
+                <item value="&#9;&#9;Bridge Progressions"/>
+                <item value="&#9;&#9;Handstand Push-ups"/>
+                <item value="&#9;Calisthenics for Beginners:"/>
+                <item value="&#9;&#9;Bodyweight Squats"/>
+                <item value="&#9;&#9;Push-ups"/>
+                <item value="&#9;&#9;Pull-ups"/>
+                <item value="&#9;&#9;Plank"/>
+                <item value="&#9;&#9;Lunges"/>
+                <item value="&#9;Animal Flow:"/>
+                <item value="&#9;&#9;Beast Crawl"/>
+                <item value="&#9;&#9;Crab Reach"/>
+                <item value="&#9;&#9;Ape Reach"/>
+                <item value="&#9;&#9;Scorpion Reach"/>
+                <item value="&#9;&#9;Lizard Crawl"/>
+                <item value="&#9;Prisoner Workout:"/>
+                <item value="&#9;&#9;Prisoner Squats"/>
+                <item value="&#9;&#9;Inverted Rows"/>
+                <item value="&#9;&#9;Jumping Lunges"/>
+                <item value="&#9;&#9;Plank-to-Push-up"/>
+                <item value="&#9;&#9;Burpees"/>
+                <item value="&#9;Pilates:"/>
+                <item value="&#9;&#9;The Hundred"/>
+                <item value="&#9;&#9;Roll-Up"/>
+                <item value="&#9;&#9;Single Leg Circles"/>
+                <item value="&#9;&#9;Plank Variations"/>
+                <item value="&#9;&#9;Side-Lying Leg Lifts"/>
+                <item value="CrossFit Workouts:"/>
+                <item value="&#9;WOD (Workout of the Day):"/>
+                <item value="&#9;&#9;Fran (Thrusters and Pull-ups)"/>
+                <item value="&#9;&#9;Cindy (Bodyweight movements)"/>
+                <item value="&#9;&#9;Murph (Run, Pull-ups, Push-ups, Squats)"/>
+                <item value="&#9;&#9;Diane (Deadlifts and Handstand Push-ups)"/>
+                <item value="&#9;&#9;Fight Gone Bad (Wall Balls, Sumo Deadlift High Pulls, Box Jumps)"/>
+                <item value="&#9;AMRAP (As Many Rounds As Possible):"/>
+                <item value="&#9;&#9;20-Minute AMRAP: Double-unders, Kettlebell Swings, Box Jumps"/>
+                <item value="&#9;&#9;10-Minute AMRAP: Burpees, Push-ups, Air Squats"/>
+                <item value="&#9;EMOM (Every Minute on the Minute):"/>
+                <item value="&#9;&#9;EMOM for 10 Minutes: 5 Deadlifts, 5 Burpees"/>
+                <item value="&#9;CrossFit Total:"/>
+                <item value="&#9;&#9;Squat 1RM"/>
+                <item value="&#9;&#9;Press 1RM"/>
+                <item value="&#9;&#9;Deadlift 1RM"/>
+                <item value="&#9;Hero WODs:"/>
+                <item value="&#9;&#9;&quot;Murph&quot; (Run, Pull-ups, Push-ups, Squats)"/>
+                <item value="&#9;&#9;&quot;DT&quot; (Deadlifts, Hang Power Cleans, Push Jerks)"/>
+                <item value="&#9;&#9;&quot;Badger&quot; (Running, Squat Cleans, Pull-ups)"/>
+                <item value="&#9;&#9;&quot;Loredo&quot; (Running, Air Squats, Push-ups, Lunges, Burpees)"/>
+                <item value="Functional Fitness Programs:"/>
+                <item value="&#9;Functional Movement Screen (FMS):"/>
+                <item value="&#9;&#9;Deep Squat"/>
+                <item value="&#9;&#9;Hurdle Step"/>
+                <item value="&#9;&#9;Inline Lunge"/>
+                <item value="&#9;&#9;Shoulder Mobility"/>
+                <item value="&#9;&#9;Active Straight Leg Raise"/>
+                <item value="&#9;TRX Training:"/>
+                <item value="&#9;&#9;TRX Rows"/>
+                <item value="&#9;&#9;TRX Chest Press"/>
+                <item value="&#9;&#9;TRX Pistol Squats"/>
+                <item value="&#9;&#9;TRX Plank"/>
+                <item value="&#9;&#9;TRX Mountain Climbers"/>
+                <item value="&#9;Kettlebell Training:"/>
+                <item value="&#9;&#9;Kettlebell Swings"/>
+                <item value="&#9;&#9;Turkish Get-ups"/>
+                <item value="&#9;&#9;Goblet Squats"/>
+                <item value="&#9;&#9;Kettlebell Snatch"/>
+                <item value="&#9;&#9;Windmills"/>
+                <item value="&#9;Parkour:"/>
+                <item value="&#9;&#9;Precision Jumps"/>
+                <item value="&#9;&#9;Vaults (e.g., Kong Vault, Lazy Vault)"/>
+                <item value="&#9;&#9;Wall Runs"/>
+                <item value="&#9;&#9;Cat Leaps"/>
+                <item value="&#9;&#9;Roll Landings"/>
+                <item value="&#9;Circuit Training:"/>
+                <item value=""/>
+                <item value="&#9;&#9;Jump Rope"/>
+                <item value="&#9;&#9;Medicine Ball Slams"/>
+                <item value="&#9;&#9;Box Jumps"/>
+                <item value="&#9;&#9;Battle Ropes"/>
+                <item value="&#9;&#9;Sled Pushes"/>
+                <item value="&#9;&#9;Specialized Programs:"/>
+                <item value="&#9;Prenatal Yoga:"/>
+                <item value="&#9;&#9;Cat-Cow Stretch"/>
+                <item value="&#9;&#9;Butterfly Stretch"/>
+                <item value="&#9;&#9;Seated Forward Bend"/>
+                <item value="&#9;&#9;Modified Triangle Pose"/>
+                <item value="&#9;&#9;Pelvic Tilts"/>
+                <item value="&#9;Senior Fitness Program:"/>
+                <item value="&#9;&#9;Chair Squats"/>
+                <item value="&#9;&#9;Leg Raises"/>
+                <item value="&#9;&#9;Seated Shoulder Press"/>
+                <item value="&#9;&#9;Standing Calf Raises"/>
+                <item value="&#9;&#9;Wall Push-ups"/>
+                <item value="&#9;Sports-Specific Training:"/>
+                <item value="&#9;&#9;Soccer: Cone Dribbling Drills"/>
+                <item value="&#9;&#9;Basketball: Layup Drills"/>
+                <item value="&#9;&#9;Golf: Rotational Medicine Ball Throws"/>
+                <item value="&#9;&#9;Swimming: Flutter Kicks"/>
+                <item value="&#9;&#9;Tennis: Lateral Hops"/>
+                <item value="&#9;Military Fitness Program:"/>
+                <item value="&#9;&#9;Bodyweight Squats"/>
+                <item value="&#9;&#9;Push-ups"/>
+                <item value="&#9;&#9;Pull-ups"/>
+                <item value="&#9;&#9;Running"/>
+                <item value="&#9;&#9;Ruck Marches"/>
+                <item value="HIIT - High-Intensity Interval Training:"/>
+                <item value="&#9;Tabata HIIT:"/>
+                <item value="&#9;&#9;Squat Jumps"/>
+                <item value="&#9;&#9;Push-ups"/>
+                <item value="&#9;&#9;Burpees"/>
+                <item value="&#9;&#9;Mountain Climbers"/>
+                <item value="&#9;&#9;Plank"/>
+                <item value="&#9;The 7-Minute Workout:"/>
+                <item value="&#9;&#9;Jumping Jacks"/>
+                <item value="&#9;&#9;Wall Sit"/>
+                <item value="&#9;&#9;Push-ups"/>
+                <item value="&#9;&#9;Abdominal Crunches"/>
+                <item value="&#9;&#9;Step-ups"/>
+                <item value="&#9;CrossFit-style HIIT:"/>
+                <item value="&#9;&#9;Box Jumps"/>
+                <item value="&#9;&#9;Kettlebell Swings"/>
+                <item value="&#9;&#9;Toes-to-Bar"/>
+                <item value="&#9;&#9;Double-unders"/>
+                <item value="&#9;&#9;Handstand Push-ups"/>
+                <item value="&#9;Pyramid HIIT:"/>
+                <item value="&#9;&#9;Burpees (30 seconds)"/>
+                <item value="&#9;&#9;High Knees (45 seconds)"/>
+                <item value="&#9;&#9;Jump Squats (60 seconds)"/>
+                <item value="&#9;&#9;Mountain Climbers (45 seconds)"/>
+                <item value="&#9;&#9;Burpees (30 seconds)"/>
+                <item value="&#9;Sprint Interval Training:"/>
+                <item value="&#9;&#9;Sprint for 30 seconds"/>
+                <item value="&#9;&#9;Walk or Jog for 60 seconds"/>
+                <item value="&#9;&#9;Repeat for 15-20 minutes"/>
+              </model>
+            </properties>
+          </component>
+          <component id="fcd44" class="javax.swing.JButton" binding="btnSubmit">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Submit"/>
+            </properties>
+          </component>
+          <component id="a53c3" class="javax.swing.JTextArea" binding="taFinishedExercises">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="456b6" class="javax.swing.JButton" binding="btnClear">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Clear"/>
+            </properties>
+          </component>
+        </children>
       </grid>
       <component id="2040" class="javax.swing.JLabel" binding="lblChooseProgram">
         <constraints>
@@ -25,13 +291,21 @@
           <text value="Choose Program:"/>
         </properties>
       </component>
+      <component id="23b03" class="javax.swing.JTextArea" binding="taProgramsToDo">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
       <component id="35a77" class="javax.swing.JComboBox" binding="cbxChooseProgram">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
-            <item value="...."/>
+            <item value=""/>
             <item value="Strength Training Programs"/>
             <item value="Cardiovascular Programs"/>
             <item value="Flexibility and Yoga Programs"/>
@@ -39,17 +313,66 @@
             <item value="CrossFit Workouts"/>
             <item value="Functional Fitness Programs"/>
             <item value="Specialized Programs"/>
-            <item value="HIIT (High Intensity Interval Training)"/>
+            <item value="HIIT - High Intensity Interval Training"/>
           </model>
         </properties>
       </component>
-      <component id="23b03" class="javax.swing.JTextArea" binding="taProgramsToDo">
+      <component id="a7c3d" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value=""/>
+            <item value="(Strength Training Programs)"/>
+            <item value="Starting Strength"/>
+            <item value="5/3/1 Program"/>
+            <item value="StrongLifts 5x5"/>
+            <item value="Push-Pull Legs (PPL)"/>
+            <item value="German Volume Training (GVT)"/>
+            <item value="(Cardiovascular Programs)"/>
+            <item value="Couch to 5K (C25K)"/>
+            <item value="Interval Training"/>
+            <item value="Long Slow Distance (LSD)"/>
+            <item value="Tabata Training"/>
+            <item value="Fartlek Training"/>
+            <item value="(Flexibility and Yoga Programs)"/>
+            <item value="Yin Yoga"/>
+            <item value="Hatha Yoga"/>
+            <item value="Ashtanga Yoga"/>
+            <item value="Iyengar Yoga"/>
+            <item value="Dynamic Stretching Routine"/>
+            <item value="(Bodyweight Exercise Programs)"/>
+            <item value="Convict Conditioning"/>
+            <item value="Calisthenics for Beginners"/>
+            <item value="Animal Flow"/>
+            <item value="Prisoner Workout"/>
+            <item value="Pilates"/>
+            <item value="(CrossFit Workouts)"/>
+            <item value="WOD (Workout of the Day)"/>
+            <item value="AMRAP (As Many Rounds As Possible)"/>
+            <item value="EMOM (Every Minute on the Minute)"/>
+            <item value="CrossFit Total"/>
+            <item value="Hero WODs"/>
+            <item value="(Functional Fitness Programs)"/>
+            <item value="Functional Movement Screen (FMS)"/>
+            <item value="TRX Training"/>
+            <item value="Kettlebell Training"/>
+            <item value="Parkour"/>
+            <item value="Circuit Training"/>
+            <item value="(Specialized Programs)"/>
+            <item value="Prenatal Yoga"/>
+            <item value="Senior Fitness Program"/>
+            <item value="Sports-Specific Training"/>
+            <item value="Military Fitness Program"/>
+            <item value="(HIIT - High Intensity Interval Training)"/>
+            <item value="Tabata HIIT"/>
+            <item value="The 7-Minute Workout"/>
+            <item value="CrossFit-style HIIT"/>
+            <item value="Pyramid HIIT"/>
+            <item value="Sprint Interval Training"/>
+          </model>
+        </properties>
       </component>
     </children>
   </grid>

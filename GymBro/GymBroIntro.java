@@ -8,8 +8,8 @@ import java.net.URL;
 
 public class GymBroIntro extends JFrame {
 
-    private JButton preMadeBtn;
-    private JButton customBtn;
+    private JButton btnPreMade;
+    private JButton btnCustom;
     private JPanel introPanel;
     private JTextArea taImage;
     private JTextField tfUser;
@@ -17,7 +17,7 @@ public class GymBroIntro extends JFrame {
     private JTextArea taWelcomeMessage;
 
     public GymBroIntro() {
-        preMadeBtn.addActionListener(new ActionListener() {
+        btnPreMade.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 GymBroPreMade preMadeFrame = new GymBroPreMade();
                 preMadeFrame.setVisible(true);
@@ -25,7 +25,7 @@ public class GymBroIntro extends JFrame {
             }
         });
 
-        customBtn.addActionListener(new ActionListener() {
+        btnCustom.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 GymBroCustom customFrame = new GymBroCustom();
                 customFrame.setVisible(true);
@@ -60,7 +60,7 @@ public class GymBroIntro extends JFrame {
     }
 
     private void setImageInTextArea(ImageIcon imageIcon) {
-        StyledDocument doc = (StyledDocument) (StyledDocument) taImage.getDocument();
+        StyledDocument doc = (StyledDocument) taImage.getDocument();  // Use taImage directly
         Style style = doc.addStyle("StyleName", null);
         StyleConstants.setIcon(style, imageIcon);
 
@@ -69,6 +69,10 @@ public class GymBroIntro extends JFrame {
         } catch (BadLocationException e) {
             e.printStackTrace();
         }
+    }
+
+    public void displayWelcomeMessage(String message) {
+        taWelcomeMessage.setText(message);
     }
 
     public static void main(String[] args) {
