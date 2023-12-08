@@ -3,6 +3,14 @@ package CrossyRoads;
 import javax.swing.*;
 import java.awt.*;
 
+//Class to set sprite image.
+//Class for graphics.
+
+
+/*
+Class that creates a sprite with an image, location,
+directional movement and a collision method.
+ */
 class Sprite {
 
     //Sprite location.
@@ -11,12 +19,19 @@ class Sprite {
     //Sprite direction.
     private double xdir, ydir;
 
+    //Holds the image of the sprite.
     private ImageIcon image;
 
+    //Draw sprite image or not.
     private boolean show = true;
 
+    //Holds the image filename.
     private String filename = "";
 
+
+    /*
+    The default constructor.
+     */
     Sprite() {
         image = null;
         xloc = 0;
@@ -25,21 +40,36 @@ class Sprite {
         ydir = 0;
     }
 
+    /*
+    Constructor that sets the sprite
+    image and location.
+     */
     public Sprite(String filename, int xloc, int yloc) {
         setImage(filename);
         this.xloc = xloc;
         this.yloc = yloc;
     }
 
+    /*
+    Constructor that takes the location
+    as the argument.
+     */
     public Sprite(int xloc, int yloc) {
         this.xloc = xloc;
         this.yloc = yloc;
     }
 
+    /*
+    Constructor that takes an image filename as the argument.
+     */
     Sprite(String filename) {
         setImage(filename);
     }
 
+
+    /*
+    Method to set the image variable.
+     */
     void setImage(String filename) {
         this.filename = filename;
 
@@ -95,11 +125,18 @@ class Sprite {
         return filename;
     }
 
+
+    /*
+    Moves character by adding the
+    direction to the location.
+     */
     void move() {
         xloc += xdir;
         yloc += ydir;
     }
 
+    //Return the width of the sprite
+    //or 20 if the image is null.
     int getWidth() {
         if (image == null)
             return 20;
@@ -107,6 +144,8 @@ class Sprite {
             return image.getIconWidth();
     }
 
+    //Return the height of the sprite
+    //or 20 if the image in null.
     int getHeight() {
         if (image == null)
             return 20;
@@ -114,8 +153,10 @@ class Sprite {
             return image.getIconHeight();
     }
 
-     /* Method to draw sprite onto JPanel.*/
 
+    /*
+    Method to draw sprite onto JPanel.
+     */
     void paint(Graphics g, JPanel panel) {
         if (show) {
             if (image == null)
