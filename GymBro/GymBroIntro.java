@@ -40,31 +40,6 @@ public class GymBroIntro extends JFrame {
 
     }
 
-    private ImageIcon loadImageIcon(String imagePath) {
-        URL imageUrl = getClass().getResource(imagePath);
-        if (imageUrl != null) {
-            return new ImageIcon(imageUrl);
-        } else {
-            return null;
-        }
-    }
-
-    private void setImageInTextArea(ImageIcon imageIcon) {
-        StyledDocument doc = (StyledDocument) taImage.getDocument();  // Use taImage directly
-        Style style = doc.addStyle("StyleName", null);
-        StyleConstants.setIcon(style, imageIcon);
-
-        try {
-            doc.insertString(doc.getLength(), "dummy text", style);
-        } catch (BadLocationException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void displayWelcomeMessage(String message) {
-        taWelcomeMessage.setText(message);
-    }
-
     public static void main(String[] args) {
         GymBroIntro introFrame = new GymBroIntro();
         introFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
