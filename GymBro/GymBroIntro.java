@@ -37,13 +37,7 @@ public class GymBroIntro extends JFrame {
         });
 
 
-
-
-
-
-
-
-
+    }
     public static void main(String[] args) {
         GymBroIntro introFrame = new GymBroIntro();
         introFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

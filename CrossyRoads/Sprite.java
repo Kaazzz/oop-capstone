@@ -165,5 +165,4 @@ class Sprite {
                 image.paintIcon(panel, g, (int) xloc, (int) yloc);
         }
     }
-
 }
