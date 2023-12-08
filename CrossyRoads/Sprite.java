@@ -1,4 +1,4 @@
 package CrossyRoads;
 
-public class Lanes {
+public class Sprite {
 }
