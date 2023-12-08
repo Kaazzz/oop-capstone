@@ -1,4 +1,4 @@
-package CrossyRoads;
+package CrossroadsOfTeyvat;
 //Class for JFrame extension.
 import javax.swing.*;
 

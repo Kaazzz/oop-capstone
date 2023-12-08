@@ -1,4 +1,4 @@
-package CrossyRoads;
+package CrossroadsOfTeyvat;
 
 import java.io.*;
 
