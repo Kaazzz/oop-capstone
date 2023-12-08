@@ -12,7 +12,7 @@ public class GymBroCustom extends JFrame{
     public GymBroCustom() {
         this.setContentPane(this.customPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400, 200);
+        this.setSize(480, 800);
         this.setTitle("GymBro Custom");
         this.setVisible(true);
     }
