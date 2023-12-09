@@ -402,18 +402,24 @@ class Game extends JPanel implements ActionListener {
         //Displays correct message based on death.
         switch (killer) {
             case "water":
+                playAudio("Sounds/Jean1.wav");
                 JOptionPane.showMessageDialog(null, "You drowned!" + "\nScore: " + score);
                 break;
             case "tooFarDown":
+                playAudio("Sounds/Jean2.wav");
+
                 JOptionPane.showMessageDialog(null, "You were trapped!" + "\nScore: " + score);
                 break;
             case "tooFarUp":
+                playAudio("Sounds/Jean3.wav");
                 JOptionPane.showMessageDialog(null, "You left the game!" + "\nScore: " + score);
                 break;
             case "fireball":
+                playAudio("Sounds/Jean2.wav");
                 JOptionPane.showMessageDialog(null, "You got hit by a fireball!" + "\nScore: " + score);
                 break;
             case "pillar":
+                playAudio("Sounds/Jean1.wav");
                 JOptionPane.showMessageDialog(null, "You got hit by a pillar!" + "\nScore: " + score);
                 break;
         }
@@ -427,6 +433,23 @@ class Game extends JPanel implements ActionListener {
         showLogo = true;
     }
 
+    private void playAudio(String s) {
+        try {
+            // Load the audio file
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(s));
+
+            // Get a clip resource.
+            Clip clip = AudioSystem.getClip();
+
+            // Open audio clip and load samples from the audio input stream.
+            clip.open(audioInputStream);
+
+            // Start playing the audio
+            clip.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     /**
@@ -1030,6 +1053,7 @@ class Game extends JPanel implements ActionListener {
                     break;
                 case KeyEvent.VK_CONTROL:
                     if (remainingInvUses > 0 && !invincibility && invDuration < 150) {
+                        playAudio("Sounds/Skill1.wav");
                         invincibility = true;
                         remainingInvUses--;
                     }
