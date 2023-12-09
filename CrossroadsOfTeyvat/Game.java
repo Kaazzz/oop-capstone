@@ -8,19 +8,26 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 
 //Class for event/key listeners.
 //Class for random numbers.
 //Class for array lists.
 //Class for timer, JPanel and dialog boxes.
 
-
-
 /**
  * JPanel to hold the game in the window.
  */
 //@SuppressWarnings("serial")
 class Game extends JPanel implements ActionListener {
+
+    private Clip themeMusic;
+    private boolean isThemeMusicPlaying = false;
+    private boolean isMusicPlaying = false;
+    private Clip backgroundMusic;
+    private int remainingInvUses = 3;
 
     //Variable for the game logo 'Crossroads Of Teyvat'.
     private Sprite logo = new Sprite("Misc/LogoFull.png");
@@ -71,12 +78,12 @@ class Game extends JPanel implements ActionListener {
     private Random rand = new Random();
 
 
-
-
     /**
      * Default constructor.
      */
     Game(boolean pause) {
+        playThemeMusic();
+
 
         //Set layout to absolute for buttons.
         setLayout(null);
@@ -116,12 +123,95 @@ class Game extends JPanel implements ActionListener {
         if (!pause) {
             startButton.setVisible(false);
             controlsButton.setVisible(false);
+            playBackgroundMusic("Sounds/Mondstadt.wav");
             gameLoop.start();
-        } else
+        } else {
             showLogo = true;
+        }
 
     }
 
+    private void playThemeMusic() {
+        try {
+            // Load the audio file for the theme music
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("Sounds/Theme.wav"));
+
+            // Get a clip resource.
+            themeMusic = AudioSystem.getClip();
+
+            // Open audio clip and load samples from the audio input stream.
+            themeMusic.open(audioInputStream);
+
+            // Start playing the theme music in a loop
+            themeMusic.loop(Clip.LOOP_CONTINUOUSLY);
+
+            // Update the flag to indicate that the theme music is now playing
+            isThemeMusicPlaying = true;
+        } catch (Exception e) {
+            // Handle exceptions (e.g., file not found, unsupported audio format)
+            e.printStackTrace();
+        }
+    }
+
+    private void pauseThemeMusic() {
+        // Pause the theme music if it's playing
+        if (isThemeMusicPlaying && themeMusic != null && themeMusic.isRunning()) {
+            themeMusic.stop();
+        }
+    }
+
+    private void resumeThemeMusic() {
+        // Resume the theme music if it was paused
+        if (isThemeMusicPlaying && themeMusic != null) {
+            themeMusic.start();
+        }
+    }
+
+
+    private void playBackgroundMusic(String filePath) {
+        try {
+            // Load the audio file for the background music
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(filePath));
+
+            // Get a clip resource.
+            backgroundMusic = AudioSystem.getClip();
+
+            // Open audio clip and load samples from the audio input stream.
+            backgroundMusic.open(audioInputStream);
+
+            // Start playing the background music in a loop
+            backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
+
+            // Update the flag to indicate that the music is now playing
+            isMusicPlaying = true;
+        } catch (Exception e) {
+            // Handle exceptions (e.g., file not found, unsupported audio format)
+            e.printStackTrace();
+        }
+    }
+
+    private void stopBackgroundMusic() {
+        // Stop the current background music if it's playing
+        if (isMusicPlaying && backgroundMusic != null && backgroundMusic.isRunning()) {
+            backgroundMusic.stop();
+            backgroundMusic.close();
+            isMusicPlaying = false;
+        }
+    }
+
+    private void pauseBackgroundMusic() {
+        // Pause the background music if it's playing
+        if (isMusicPlaying && backgroundMusic != null && backgroundMusic.isRunning()) {
+            backgroundMusic.stop();
+        }
+    }
+
+    private void resumeBackgroundMusic() {
+        // Resume the background music if it was paused
+        if (isMusicPlaying && backgroundMusic != null) {
+            backgroundMusic.start();
+        }
+    }
 
     /**
      * Method to set the initial location of all the sprites.
@@ -187,19 +277,39 @@ class Game extends JPanel implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
 
-        //Makes a new game if start button is clicked.
-        if (e.getSource() == startButton) {
+        // Pause the theme music when the game is paused
+        if (!gameLoop.isRunning()) {
 
-            newGame = true;
-            newGame();
+            resumeThemeMusic();
+        } else {
+            // Resume the theme music when the game is not paused
+            //resumeThemeMusic();
+            pauseThemeMusic();
 
+            // Other actionPerformed code
+
+            // Play the Mondstadt music when the game is started
+            if (newGame) {
+                stopBackgroundMusic();
+                playBackgroundMusic("Sounds/Mondstadt.wav");
+                newGame();
+            }
         }
+
+            //Makes a new game if start button is clicked.
+            if (e.getSource() == startButton) {
+
+                newGame = true;
+                newGame();
+
+            }
+
         //Show message dialog with controls.
         else if (e.getSource() == controlsButton) {
 
             JOptionPane.showMessageDialog(null, "Arrow Keys:  Move the Character." +
-                    "\nCtrl:  Activates 3 seconds of invincibility once per game." +
-                    "\n         (Makes Character pass through any object)" +
+                    "\nCtrl:  Activates Skill: 3 seconds of Invincibility only 3 times per game." +
+                    "\n         (Makes the Character pass through any object)" +
                     "\nShift:  Pause / Resume the game." +
                     "\nEnter:  Start game / Restart game while paused.");
 
@@ -244,6 +354,12 @@ class Game extends JPanel implements ActionListener {
                 score = movement;
 
 
+            if (e.getSource() == startButton) {
+                //stopBackgroundMusic();
+                //playBackgroundMusic("Sounds/StartTheme.wav");
+                newGame = true;
+                newGame();
+            }
             //Redraws sprites on screen.
             repaint();
 
@@ -260,7 +376,8 @@ class Game extends JPanel implements ActionListener {
     private void newGame() {
 
         if (newGame) {
-
+            pauseThemeMusic();
+            pauseBackgroundMusic();
             //Get this JFrame and destroy it.
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
             frame.dispose();
@@ -279,6 +396,8 @@ class Game extends JPanel implements ActionListener {
         repaint();
         gameLoop.stop();
         scoreManager.updateScores(score);
+
+        pauseBackgroundMusic();
 
         //Displays correct message based on death.
         switch (killer) {
@@ -299,6 +418,7 @@ class Game extends JPanel implements ActionListener {
                 break;
         }
 
+        resumeThemeMusic();
         //Show start button.
         //Start button makes new window.
         startButton.setVisible(true);
@@ -316,21 +436,25 @@ class Game extends JPanel implements ActionListener {
     private void heroBounds() {
 
         //Invincibility countdown.
-        if(invincibility){
+        if (invincibility) {
             invDuration++;
 
-            if(invDuration == 1)
+            if (invDuration == 1)
                 invTimeLeft = 3;
-            if(invDuration == 50)
+            if (invDuration == 50)
                 invTimeLeft = 2;
-            if(invDuration == 100)
+            if (invDuration == 100)
                 invTimeLeft = 1;
-            if(invDuration == 150) {
+            if (invDuration == 150) {
                 invTimeLeft = 0;
                 invincibility = false;
+
+                // Reset invincibility countdown for reuse.
+                if (remainingInvUses > 0) {
+                    invDuration = 0;
+                }
             }
         }
-
 
         //Collision method for Character.
         for (int i = 0; i < numOfStrips; i++) {
@@ -796,6 +920,11 @@ class Game extends JPanel implements ActionListener {
         //Erases the previous screen.
         super.paintComponent(g);
 
+        g.setColor(Color.blue);
+        g.drawString("Skills Left: " + remainingInvUses, 50, 250);
+
+
+
         //Draws strips.
         for (int i = 0; i < numOfStrips; i++) {
             for (int x = 0; x < 8; x++) {
@@ -820,9 +949,10 @@ class Game extends JPanel implements ActionListener {
         g.setFont(newFont);
         g.setColor(Color.green);
 
-        //Draws the high score on the screen.
-        g.drawString("Top Score: " + scoreManager.readScore(), 50, 50);
+        g.drawString("Skills Left: " + remainingInvUses, 50, 100);
 
+        //Draws the high score on the screen.
+        g.drawString("High Score: " + scoreManager.readScore(), 50, 50);
 
         //Set the font size and color.
         Font cF = g.getFont();
@@ -831,7 +961,7 @@ class Game extends JPanel implements ActionListener {
         g.setColor(Color.yellow);
 
         //Draws the score on the screen.
-        g.drawString("" + score, 50, 150);
+        g.drawString("" + score, 50, 250);
 
 
         //Set the font size and color.
@@ -842,6 +972,7 @@ class Game extends JPanel implements ActionListener {
 
         //Draws invincibility status.
         if (invincibility)
+
             g.drawString("" + invTimeLeft, 350, 350);
 
 
@@ -898,8 +1029,10 @@ class Game extends JPanel implements ActionListener {
                     }
                     break;
                 case KeyEvent.VK_CONTROL:
-                    if (!invincibility && invDuration < 150)
+                    if (remainingInvUses > 0 && !invincibility && invDuration < 150) {
                         invincibility = true;
+                        remainingInvUses--;
+                    }
                     break;
                 case KeyEvent.VK_SHIFT:
                     if (gameLoop.isRunning())
