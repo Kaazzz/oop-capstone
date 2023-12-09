@@ -8,114 +8,114 @@ class ManageObstacles {
     private Random rand = new Random();
 
     /*
-    Method that creates and resets cars on the road strip.
+    Method that creates and resets Fireballs on the road strip.
      */
-    Sprite setCar(int stripYLoc) {
+    Sprite setFireball(int stripYLoc) {
 
         //Makes sprite.
-        Sprite car = new Sprite();
+        Sprite Fireball = new Sprite();
 
         //Scrolls sprite.
-        car.setYDir(2);
+        Fireball.setYDir(2);
 
         //Set sprite to strip location.
-        car.setYLoc(stripYLoc);
+        Fireball.setYLoc(stripYLoc);
 
         if (rand.nextInt(2) == 1) {
             //Right to left.
-            car.setXLoc(900);
-            car.setXDir(-(rand.nextInt(10) + 10));
-            car.setImage(randomCar("left"));
+            Fireball.setXLoc(900);
+            Fireball.setXDir(-(rand.nextInt(10) + 10));
+            Fireball.setImage(randomFireball("left"));
 
         } else {
             //Left to right.
-            car.setXLoc(-200);
-            car.setXDir((rand.nextInt(10) + 10));
-            car.setImage(randomCar("right"));
+            Fireball.setXLoc(-200);
+            Fireball.setXDir((rand.nextInt(10) + 10));
+            Fireball.setImage(randomFireball("right"));
         }
 
-        return car;
+        return Fireball;
     }
 
     /*
-    Method to return random car color.
+    Method to return random Fireball color.
      */
-    String randomCar(String dir) {
+    String randomFireball(String dir) {
 
-        //Car color variables.
-        int carColor = rand.nextInt(8);
-        String carImage = "";
+        //Fireball color variables.
+        int FireballColor = rand.nextInt(8);
+        String FireballImage = "";
 
         if (dir.equals("left")) {
 
-            switch (carColor) {
+            switch (FireballColor) {
                 case 0:
-                    carImage = "\\Car_Left\\Car_Left_Blue.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Blue.png";
                     break;
                 case 1:
-                    carImage = "\\Car_Left\\Car_Left_Blue.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Blue.png";
                     break;
                 case 2:
-                    carImage = "\\Car_Left\\Car_Left_Red.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Red.png";
                     break;
                 case 3:
-                    carImage = "\\Car_Left\\Car_Left_Purple.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Purple.png";
                     break;
                 case 4:
-                    carImage = "\\Car_Left\\Car_Left_Purple.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Purple.png";
                     break;
                 case 5:
-                    carImage = "\\Car_Left\\Car_Left_Red.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Red.png";
                     break;
                 case 6:
-                    carImage = "\\Car_Left\\Car_Left_Red.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Red.png";
                     break;
                 case 7:
-                    carImage = "\\Car_Left\\Car_Left_Purple.png";
+                    FireballImage = "\\Fireball_Left\\Fireball_Left_Purple.png";
                     break;
             }
         }
 
         if (dir.equals("right")) {
 
-            switch (carColor) {
+            switch (FireballColor) {
                 case 0:
-                    carImage = "\\Car_Right\\Car_Right_Blue.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Blue.png";
                     break;
                 case 1:
-                    carImage = "\\Car_Right\\Car_Right_Blue.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Blue.png";
                     break;
                 case 2:
-                    carImage = "\\Car_Right\\Car_Right_Purple.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Purple.png";
                     break;
                 case 3:
-                    carImage = "\\Car_Right\\Car_Right_Red.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Red.png";
                     break;
                 case 4:
-                    carImage = "\\Car_Right\\Car_Right_Purple.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Purple.png";
                     break;
                 case 5:
-                    carImage = "\\Car_Right\\Car_Right_Red.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Red.png";
                     break;
                 case 6:
-                    carImage = "\\Car_Right\\Car_Right_Blue.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Blue.png";
                     break;
                 case 7:
-                    carImage = "\\Car_Right\\Car_Right_Purple.png";
+                    FireballImage = "\\Fireball_Right\\Fireball_Right_Purple.png";
                     break;
             }
         }
 
-        return carImage;
+        return FireballImage;
     }
 
     /*
-    Method that creates and resets trains on the track strip.
+    Method that creates and resets Pillar on the track strip.
      */
-    Sprite setTrain(int stripYLoc) {
+    Sprite setPillar(int stripYLoc) {
 
         //Makes sprite.
-        Sprite train = new Sprite(randomTrain());
+        Sprite train = new Sprite(randomPillar());
 
         //Scrolls sprite.
         train.setYDir(2);
@@ -140,7 +140,7 @@ class ManageObstacles {
     Method to return a random colored train.
      */
 
-    String randomTrain() {
+    String randomPillar() {
 
         int trainNum = rand.nextInt(10);
         String trainImage = "";
@@ -149,42 +149,42 @@ class ManageObstacles {
 
             case 0:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 1:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 2:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 3:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 4:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 5:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 6:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
 
             case 7:
 
-                trainImage = "\\Trains\\Pillar.png";
+                trainImage = "\\Pillar\\Pillar.png";
                 break;
         }
 

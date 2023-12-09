@@ -22,7 +22,7 @@ import java.util.Random;
 //@SuppressWarnings("serial")
 class Game extends JPanel implements ActionListener {
 
-    //Variable for the game logo 'Froggy Road'.
+    //Variable for the game logo 'Crossroads Of Teyvat'.
     private Sprite logo = new Sprite("Misc/LogoFull.png");
     private boolean showLogo = false;
     //New game variables.
@@ -41,16 +41,16 @@ class Game extends JPanel implements ActionListener {
     private ArrayList<Integer> special = new ArrayList<>();
     //Holds number of special images in special strip.
     private int land = 1, water = 0;
-    //Array that holds the cars.
-    private ArrayList<Sprite> cars = new ArrayList<>();
-    //Array that holds the trains.
-    private ArrayList<Sprite> trains = new ArrayList<>();
+    //Array that holds the fireballs.
+    private ArrayList<Sprite> fireballs = new ArrayList<>();
+    //Array that holds the Pillar.
+    private ArrayList<Sprite> Pillar = new ArrayList<>();
     private JButton startButton, controlsButton;
 
     private ManageObstacles vManager = new ManageObstacles();
 
     //Create hero sprite.
-    private Sprite hero = new Sprite("Frog/Frog_down.png");
+    private Sprite hero = new Sprite("Character/Character_down.png");
 
     //Variable to hold score and travel.
     private int score = 0, movement = 0;
@@ -143,8 +143,8 @@ class Game extends JPanel implements ActionListener {
             allStrips[i] = strip;
         }
 
-        //Sets a grass image under and in front of the frog location.
-        //(Prevents the frog from starting on a tree or shrub)
+        //Sets a grass image under and in front of the Character location.
+        //(Prevents the Character from starting on a tree or shrub)
         allStrips[5][3].setImage("Misc/Grass.png");
         allStrips[4][3].setImage("Misc/Grass.png");
 
@@ -197,9 +197,9 @@ class Game extends JPanel implements ActionListener {
         //Show message dialog with controls.
         else if (e.getSource() == controlsButton) {
 
-            JOptionPane.showMessageDialog(null, "Arrow Keys:  Move the frog." +
+            JOptionPane.showMessageDialog(null, "Arrow Keys:  Move the Character." +
                     "\nCtrl:  Activates 3 seconds of invincibility once per game." +
-                    "\n         (Makes frog pass through any object)" +
+                    "\n         (Makes Character pass through any object)" +
                     "\nShift:  Pause / Resume the game." +
                     "\nEnter:  Start game / Restart game while paused.");
 
@@ -218,11 +218,11 @@ class Game extends JPanel implements ActionListener {
             hero.move();
 
 
-            //Method to move cars.
-            manageCars();
+            //Method to move fireballs.
+            managefireballs();
 
-            //Method to move trains.
-            manageTrains();
+            //Method to move Pillar.
+            managePillar();
 
 
             //Moves all the sprites in the sprite strips.
@@ -291,11 +291,11 @@ class Game extends JPanel implements ActionListener {
             case "tooFarUp":
                 JOptionPane.showMessageDialog(null, "You left the game!" + "\nScore: " + score);
                 break;
-            case "car":
-                JOptionPane.showMessageDialog(null, "You got hit by a car!" + "\nScore: " + score);
+            case "fireball":
+                JOptionPane.showMessageDialog(null, "You got hit by a fireball!" + "\nScore: " + score);
                 break;
-            case "train":
-                JOptionPane.showMessageDialog(null, "You got hit by a train!" + "\nScore: " + score);
+            case "pillar":
+                JOptionPane.showMessageDialog(null, "You got hit by a pillar!" + "\nScore: " + score);
                 break;
         }
 
@@ -311,7 +311,7 @@ class Game extends JPanel implements ActionListener {
 
     /**
      * Method that prevent hero from moving on trees, and checks
-     * for death with water, train, or cars.
+     * for death with water, pillar, or fireballs.
      */
     private void heroBounds() {
 
@@ -332,7 +332,7 @@ class Game extends JPanel implements ActionListener {
         }
 
 
-        //Collision method for frog.
+        //Collision method for Character.
         for (int i = 0; i < numOfStrips; i++) {
             for (Sprite s : allStrips[i]) {
 
@@ -340,7 +340,7 @@ class Game extends JPanel implements ActionListener {
                 if (!invincibility) {
 
                     //Prevents hero from jumping through trees.
-                    if (s.getFileName().equals("Misc/Tree_One.png") || s.getFileName().equals("Misc/Tree_Two.png")) {
+                    if (s.getFileName().equals("Misc/Hydro_Slime.png") || s.getFileName().equals("Misc/Pyro_Slime.png")) {
                         if (collision(hero, s)) {
 
                             if ((s.getYLoc() + 100) - (hero.getYLoc()) < 5 && (s.getXLoc() + 100) - hero.getXLoc() < 125 && (s.getXLoc() + 100) - hero.getXLoc() > 20) {
@@ -413,11 +413,11 @@ class Game extends JPanel implements ActionListener {
         if (left > 0 && press) {
             hero.setXDir(-12.5);
             left--;
-            hero.setImage("Frog/Frog_down.png");
+            hero.setImage("Character/Character_down.png");
         } else if (right > 0 && press) {
             hero.setXDir(12.5);
             right--;
-            hero.setImage("Frog/Frog_down.png");
+            hero.setImage("Character/Character_down.png");
         } else if (left == 0 && right == 0 && up == 0 && down == 0) {
             hero.setXDir(0);
             press = false;
@@ -430,7 +430,7 @@ class Game extends JPanel implements ActionListener {
             //Set hero speed.
             hero.setYDir(-10);
             hero.move();
-            hero.setImage("Frog/Frog_down.png");
+            hero.setImage("Character/Character_down.png");
 
             //Get hero Y location.
             location = hero.getYLoc();
@@ -463,7 +463,7 @@ class Game extends JPanel implements ActionListener {
             //Set hero speed.
             hero.setYDir(10);
             hero.move();
-            hero.setImage("Frog/Frog_up.png");
+            hero.setImage("Character/Character_up.png");
 
             //Get hero location
             location = hero.getYLoc();
@@ -495,53 +495,53 @@ class Game extends JPanel implements ActionListener {
 
     /**
      * Method that:
-     * Moves cars.
-     * Removes cars passing Y bounds.
-     * Checks for car collisions.
+     * Moves fireballs.
+     * Removes fireballs passing Y bounds.
+     * Checks for fireball collisions.
      * Note: foreach not working correctly.
      */
-    private void manageCars() {
+    private void managefireballs() {
 
-        //Cycles through car sprites.
-        for (int i = 0; i < cars.size(); i++) {
+        //Cycles through fireball sprites.
+        for (int i = 0; i < fireballs.size(); i++) {
 
-            Sprite car = cars.get(i);
+            Sprite fireball = fireballs.get(i);
 
-            //Removes cars passing Y bounds.
-            if (car.getYLoc() > 800) {
-                cars.remove(i);
+            //Removes fireballs passing Y bounds.
+            if (fireball.getYLoc() > 800) {
+                fireballs.remove(i);
             }else {
 
-                //Moves car sprites.
-                car.move();
+                //Moves fireball sprites.
+                fireball.move();
 
 
-                //Reset cars passing X bounds.
-                if (car.getXLoc() < -(rand.nextInt(700) + 400)){
+                //Reset fireballs passing X bounds.
+                if (fireball.getXLoc() < -(rand.nextInt(700) + 400)){
 
                     //Right to left.
-                    car.setXDir(-(rand.nextInt(10) + 10));
+                    fireball.setXDir(-(rand.nextInt(10) + 10));
 
-                    car.setXLoc(900);
+                    fireball.setXLoc(900);
 
-                    car.setImage(vManager.randomCar("left"));
-                } else if (car.getXLoc() > (rand.nextInt(700) + 1100)) {
+                    fireball.setImage(vManager.randomFireball("left"));
+                } else if (fireball.getXLoc() > (rand.nextInt(700) + 1100)) {
 
                     //Left to right.
-                    car.setXDir((rand.nextInt(10) + 10));
+                    fireball.setXDir((rand.nextInt(10) + 10));
 
-                    car.setXLoc(-200);
+                    fireball.setXLoc(-200);
 
-                    car.setImage(vManager.randomCar("right"));
+                    fireball.setImage(vManager.randomFireball("right"));
                 }
             }
 
 
-            //Checks for car collisions.
-            if (collision(car, hero) && !invincibility) {
+            //Checks for fireball collisions.
+            if (collision(fireball, hero) && !invincibility) {
 
                 //Method to end game.
-                killMsg("car");
+                killMsg("fireball");
             }
         }
 
@@ -550,51 +550,51 @@ class Game extends JPanel implements ActionListener {
 
     /**
      * Method that:
-     * Moves trains.
-     * Removes trains passing Y bounds.
-     * Checks for train collisions.
+     * Moves Pillar.
+     * Removes Pillar passing Y bounds.
+     * Checks for pillar collisions.
      */
-    private void manageTrains() {
+    private void managePillar() {
 
-        //Cycles through car sprites.
-        for (int i = 0; i < trains.size(); i++) {
-
-
-            Sprite train = trains.get(i);
+        //Cycles through fireball sprites.
+        for (int i = 0; i < Pillar.size(); i++) {
 
 
-            //Removes trains passing Y bounds.
-            if (train.getYLoc() > 800) {
-                trains.remove(i);
+            Sprite pillar = Pillar.get(i);
+
+
+            //Removes Pillar passing Y bounds.
+            if (pillar.getYLoc() > 800) {
+                Pillar.remove(i);
             }else {
 
-                //Moves train sprites.
-                train.move();
+                //Moves pillar sprites.
+                pillar.move();
 
 
                 //Reset X bounds.
-                if (train.getXLoc() < -(rand.nextInt(2500) + 2600)) {
-                    train.setXDir(-(rand.nextInt(10) + 30));
+                if (pillar.getXLoc() < -(rand.nextInt(2500) + 2600)) {
+                    pillar.setXDir(-(rand.nextInt(10) + 30));
 
-                    train.setXLoc(900);
+                    pillar.setXLoc(900);
 
-                    train.setImage(vManager.randomTrain());
-                } else if (train.getXLoc() > rand.nextInt(2500) + 1800) {
-                    train.setXDir((rand.nextInt(10) + 30));
+                    pillar.setImage(vManager.randomPillar());
+                } else if (pillar.getXLoc() > rand.nextInt(2500) + 1800) {
+                    pillar.setXDir((rand.nextInt(10) + 30));
 
-                    train.setXLoc(-1500);
+                    pillar.setXLoc(-1500);
 
-                    train.setImage(vManager.randomTrain());
+                    pillar.setImage(vManager.randomPillar());
                 }
 
             }
 
 
-            //Checks for train collisions.
-            if (collision(train, hero) && !invincibility) {
+            //Checks for pillar collisions.
+            if (collision(pillar, hero) && !invincibility) {
 
                 //Method to end game.
-                killMsg("train");
+                killMsg("pillar");
             }
         }
 
@@ -645,20 +645,20 @@ class Game extends JPanel implements ActionListener {
 
                 //If there was previously a water strip, and this strip is a water strip, match this strips lillypads to the previous strip.
                 if (water > 0) {
-                    if (allStrips[v][0].getFileName().equals("Misc/Water.png") || allStrips[v][0].getFileName().equals("Misc/Lillypad.png")) {
+                    if (allStrips[v][0].getFileName().equals("Misc/Water.png") || allStrips[v][0].getFileName().equals("Misc/Rock.png")) {
 
                         water = 0;
 
                         for (int i : special) {
-                            allStrips[v][i].setImage("Misc/Lillypad.png");
+                            allStrips[v][i].setImage("Misc/Rock.png");
                         }
                     }
                 }
 
                 //If there was previously a water strip, and this strip is a land strip, match the grass to the previous strips lillypads.
                 if (water > 0) {
-                    if (allStrips[v][0].getFileName().equals("Misc/Grass.png") || allStrips[v][0].getFileName().equals("Misc/Shrub.png") ||
-                            allStrips[v][0].getFileName().equals("Misc/Tree_One.png") || allStrips[v][0].getFileName().equals("Misc/Tree_Two.png")) {
+                    if (allStrips[v][0].getFileName().equals("Misc/Grass.png") || allStrips[v][0].getFileName().equals("Misc/Dendro_Slime.png") ||
+                            allStrips[v][0].getFileName().equals("Misc/Hydro_Slime.png") || allStrips[v][0].getFileName().equals("Misc/Pyro_Slime.png")) {
 
                         allStrips[v] = stripGen.getSpecialLandStrip();
 
@@ -683,7 +683,7 @@ class Game extends JPanel implements ActionListener {
                             allStrips[v] = stripGen.getWaterStrip();
 
                             for (int i = 0; i < 8; i++) {
-                                if (allStrips[v][i].getFileName().equals("Misc/Lillypad.png")) {
+                                if (allStrips[v][i].getFileName().equals("Misc/Rock.png")) {
                                     //TODO: Remove
                                     for(int s : special){
                                         if (i == s) {
@@ -700,14 +700,14 @@ class Game extends JPanel implements ActionListener {
 
 
                 //if there is a water strip, write down the index of the Lillypads.
-                if (allStrips[v][0].getFileName().equals("Misc/Water.png") || allStrips[v][0].getFileName().equals("Misc/Lillypad.png")) {
+                if (allStrips[v][0].getFileName().equals("Misc/Water.png") || allStrips[v][0].getFileName().equals("Misc/Rock.png")) {
 
                     special.clear();
 
                     water = 0;
 
                     for (int i = 0; i < 8; i++) {
-                        if (allStrips[v][i].getFileName().equals("Misc/Lillypad.png")) {
+                        if (allStrips[v][i].getFileName().equals("Misc/Rock.png")) {
                             special.add(i);
                             water++;
                         }
@@ -716,8 +716,8 @@ class Game extends JPanel implements ActionListener {
                     water = 0;
 
                 //if there is a land strip, write down the index of the grass.
-                if (allStrips[v][0].getFileName().equals("Misc/Grass.png") || allStrips[v][0].getFileName().equals("Misc/Shrub.png") ||
-                        allStrips[v][0].getFileName().equals("Misc/Tree_One.png") || allStrips[v][0].getFileName().equals("Misc/Tree_Two.png")) {
+                if (allStrips[v][0].getFileName().equals("Misc/Grass.png") || allStrips[v][0].getFileName().equals("Misc/Dendro_Slime.png") ||
+                        allStrips[v][0].getFileName().equals("Misc/Hydro_Slime.png") || allStrips[v][0].getFileName().equals("Misc/Pyro_Slime.png")) {
 
                     special.clear();
 
@@ -744,14 +744,14 @@ class Game extends JPanel implements ActionListener {
                     X += 100;
                 }
 
-                //Set car.
+                //Set fireball.
                 if (allStrips[v][0].getFileName().equals("Misc/Road.png")){
-                    cars.add(vManager.setCar(allStrips[v][0].getYLoc() + 10));
+                    fireballs.add(vManager.setFireball(allStrips[v][0].getYLoc() + 10));
                 }
 
-                //Set train.
+                //Set pillar.
                 if (allStrips[v][0].getFileName().equals("Misc/Tracks.png")) {
-                    trains.add(vManager.setTrain(allStrips[v][0].getYLoc() + 10));
+                    Pillar.add(vManager.setPillar(allStrips[v][0].getYLoc() + 10));
                 }
             }
         }
@@ -806,12 +806,12 @@ class Game extends JPanel implements ActionListener {
         //Draw hero sprite.
         hero.paint(g, this);
 
-        //Draw car sprites.
-        for (Sprite s : cars)
+        //Draw fireball sprites.
+        for (Sprite s : fireballs)
             s.paint(g, this);
 
-        //Draw train sprites.
-        for (Sprite s : trains)
+        //Draw pillar sprites.
+        for (Sprite s : Pillar)
             s.paint(g, this);
 
         //Set the font size and color.

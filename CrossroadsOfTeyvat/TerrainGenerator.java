@@ -46,7 +46,7 @@ class TerrainGenerator {
                 for (int i = 0; i < y; i++) {
                     //Holds random number.
                     x = gen.nextInt(5);
-                    spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Grass.png", "Misc/Grass.png", "Misc/Tree_One.png");
+                    spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Grass.png", "Misc/Grass.png", "Misc/Hydro_Slime.png");
                 }
                 break;
 
@@ -55,7 +55,7 @@ class TerrainGenerator {
                 for (int i = 0; i < y; i++) {
                     //Holds random number.
                     x = gen.nextInt(5);
-                    spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Water.png", "Misc/Water.png", "Misc/Lillypad.png");
+                    spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Water.png", "Misc/Water.png", "Misc/Rock.png");
                 }
         }
 
@@ -118,7 +118,7 @@ class TerrainGenerator {
         for (int i = 0; i < 8; i++) {
             //Holds random number.
             int x = gen.nextInt(5);
-            spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Grass.png", "Misc/Grass.png", "Misc/Tree_One.png");
+            spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Grass.png", "Misc/Grass.png", "Misc/Hydro_Slime.png");
         }
         return spriteStrip;
     }
@@ -137,7 +137,7 @@ class TerrainGenerator {
         for (int i = 0; i < 8; i++) {
             //Holds random number.
             int x = gen.nextInt(5);
-            spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Grass.png", "Misc/Tree_Two.png", "Misc/Shrub.png");
+            spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Grass.png", "Misc/Pyro_Slime.png", "Misc/Dendro_Slime.png");
         }
 
         return spriteStrip;
@@ -157,7 +157,7 @@ class TerrainGenerator {
         for (int i = 0; i < 8; i++) {
             //Holds random number.
             int x = gen.nextInt(5);
-            spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Water.png", "Misc/Water.png", "Misc/Lillypad.png");
+            spriteStrip[i] = makeSpecialStrip(i, x, "Misc/Water.png", "Misc/Water.png", "Misc/Rock.png");
         }
 
         return spriteStrip;
