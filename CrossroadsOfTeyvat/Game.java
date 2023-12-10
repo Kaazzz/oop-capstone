@@ -35,9 +35,9 @@ class Game extends JPanel implements ActionListener {
     //New game variables.
     private boolean newGame = false;
 
-    /*
-     * Variables.
-     */
+
+     // Variables.
+
     //Creates a strip generator object.
     private TerrainGenerator stripGen = new TerrainGenerator();
     //Holds Number of strips on screen.
@@ -78,9 +78,9 @@ class Game extends JPanel implements ActionListener {
     private Random rand = new Random();
 
 
-    /**
-     * Default constructor.
-     */
+
+     // Default constructor.
+
     Game(boolean pause) {
         playThemeMusic();
 
@@ -239,9 +239,9 @@ class Game extends JPanel implements ActionListener {
         allStrips[4][3].setImage("Misc/Grass.png");
 
 
-        /*
-         * Sets the location for the sprites in the strip array.
-         */
+
+         // Sets the location for the sprites in the strip array.
+
         //Spaces sprites 100 pixels apart horizontally.
         int x = 0;
         //Spaces sprites 100 pixels apart vertically.
@@ -272,9 +272,9 @@ class Game extends JPanel implements ActionListener {
     }
 
 
-    /**
-     * Timer runs these statement on a loop.
-     */
+
+    //  Timer runs these statement on a loop.
+
     public void actionPerformed(ActionEvent e) {
 
         // Pause the theme music when the game is paused
