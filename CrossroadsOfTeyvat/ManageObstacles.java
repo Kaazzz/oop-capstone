@@ -7,9 +7,9 @@ class ManageObstacles {
     //Create random generator.
     private Random rand = new Random();
 
-    /*
-    Method that creates and resets Fireballs on the road strip.
-     */
+
+    //Method that creates and resets Fireballs on the road strip.
+
     Sprite setFireball(int stripYLoc) {
 
         //Makes sprite.

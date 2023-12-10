@@ -43,9 +43,7 @@ public class GameWindow extends JFrame {
     }
 
 
-    /**
-     * Main constructor to start program.
-     */
+      //Main constructor to start program.
     public static void main(String[] args) {
 
         //Pause game if first run.
