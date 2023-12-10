@@ -454,10 +454,10 @@ class Game extends JPanel implements ActionListener {
     }
 
 
-    /**
-     * Method that prevent hero from moving on trees, and checks
-     * for death with water, pillar, or fireballs.
-     */
+
+     //Method that prevent hero from moving on trees, and checks
+     //for death with water, pillar, or fireballs.
+
     private void heroBounds() {
 
         //Invincibility countdown.
@@ -642,13 +642,11 @@ class Game extends JPanel implements ActionListener {
         }
     }
 
-    /**
-     * Method that:
-     * Moves fireballs.
-     * Removes fireballs passing Y bounds.
-     * Checks for fireball collisions.
-     * Note: foreach not working correctly.
-     */
+
+     //Moves fireballs.
+     // Removes fireballs passing Y bounds.
+     //* Checks for fireball collisions.
+
     private void managefireballs() {
 
         //Cycles through fireball sprites.
@@ -697,12 +695,11 @@ class Game extends JPanel implements ActionListener {
 
     }
 
-    /**
-     * Method that:
-     * Moves Pillar.
-     * Removes Pillar passing Y bounds.
-     * Checks for pillar collisions.
-     */
+
+     //Moves Pillar.
+     //Removes Pillar passing Y bounds.
+     //Checks for pillar collisions.
+
     private void managePillar() {
 
         //Cycles through fireball sprites.
@@ -749,9 +746,9 @@ class Game extends JPanel implements ActionListener {
 
     }
 
-    /**
-     * Method that correctly resets the strips.
-     */
+
+     //Method that correctly resets the strips.
+
     private void manageStrips() {
 
         //Blank strip test variables.
@@ -908,9 +905,9 @@ class Game extends JPanel implements ActionListener {
 
 
 
-    /**
-     * Scrolls the strips and the hero.
-     */
+
+     //Scrolls the strips and the hero.
+
     private void scrollScreen() {
 
         //Cycles through strip array.
@@ -925,9 +922,9 @@ class Game extends JPanel implements ActionListener {
         }
     }
 
-    /**
-     * Checks for sprite collisions.
-     */
+
+     // Checks for sprite collisions.
+
     private boolean collision(Sprite one, Sprite two) {
 
         //Creates rectangles around sprites and checks for interesection.
@@ -937,9 +934,9 @@ class Game extends JPanel implements ActionListener {
         return first.intersects(second);
     }
 
-    /**
-     * Draws graphics onto screen.
-     */
+
+     // Draws graphics onto screen.
+
     public void paintComponent(Graphics g) {
 
         //Erases the previous screen.
@@ -1018,10 +1015,10 @@ class Game extends JPanel implements ActionListener {
     }
 
 
-    /**
-     * Reads keyboard input for moving
-     * when key is pressed down.
-     */
+
+      //Reads keyboard input for moving
+      //when key is pressed down.
+
     private class KeyPressing extends KeyAdapter {
 
         public void keyPressed(KeyEvent e) {
@@ -1083,10 +1080,10 @@ class Game extends JPanel implements ActionListener {
             }
         }
 
-        /**
-         * Reads keyboard for input for stopping
-         * when key is not pressed down.
-         */
+
+        //Reads keyboard for input for stopping
+        //when key is not pressed down.
+
         public void keyReleased(KeyEvent e) {
 
             switch (e.getKeyCode()) {
@@ -1106,5 +1103,5 @@ class Game extends JPanel implements ActionListener {
             }
         }
     }
-//////////
+
 }
