@@ -10,7 +10,7 @@ public class GameWindow extends JFrame {
 
     //Variable for final JFrame size.
     private final int HEIGHT = 840;
-    private final int WIDTH = 800;
+    private final int WIDTH = 815;
 
 
     /**

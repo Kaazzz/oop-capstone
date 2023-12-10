@@ -291,14 +291,14 @@ class Game extends JPanel implements ActionListener {
             // Play the Mondstadt music when the game is started
             if (newGame) {
                 stopBackgroundMusic();
-                playBackgroundMusic("Sounds/Mondstadt.wav");
+                //playBackgroundMusic("Sounds/Mondstadt.wav");
                 newGame();
             }
         }
 
             //Makes a new game if start button is clicked.
             if (e.getSource() == startButton) {
-
+                playAudio("Sounds/StartEffect.wav");
                 newGame = true;
                 newGame();
 
@@ -1052,8 +1052,15 @@ class Game extends JPanel implements ActionListener {
                     }
                     break;
                 case KeyEvent.VK_CONTROL:
+                    String[] soundFiles = {"Sounds/Skill1.wav", "Sounds/Skill2.wav", "Sounds/Skill3.wav", "Sounds/Skill4.wav", "Sounds/Skill5.wav"};
                     if (remainingInvUses > 0 && !invincibility && invDuration < 150) {
-                        playAudio("Sounds/Skill1.wav");
+                        Random random = new Random();
+                        int randomIndex = random.nextInt(soundFiles.length);
+                        String randomSoundFile = soundFiles[randomIndex];
+
+                        // Play the randomly selected sound
+                        playAudio(randomSoundFile);
+
                         invincibility = true;
                         remainingInvUses--;
                     }
@@ -1066,6 +1073,7 @@ class Game extends JPanel implements ActionListener {
                     break;
                 case KeyEvent.VK_ENTER:
                     if (!gameLoop.isRunning()) {
+                        playAudio("Sounds/StartEffect.wav");
                         newGame = true;
                         newGame();
                     }
