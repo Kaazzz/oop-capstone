@@ -7,10 +7,10 @@ import java.awt.*;
 //Class for graphics.
 
 
-/*
-Class that creates a sprite with an image, location,
-directional movement and a collision method.
- */
+
+//Class that creates a sprite with an image, location,
+//directional movement and a collision method.
+
 class Sprite {
 
     //Sprite location.
@@ -50,26 +50,26 @@ class Sprite {
         this.yloc = yloc;
     }
 
-    /*
-    Constructor that takes the location
+
+    //Constructor that takes the location
     as the argument.
-     */
+
     public Sprite(int xloc, int yloc) {
         this.xloc = xloc;
         this.yloc = yloc;
     }
 
-    /*
-    Constructor that takes an image filename as the argument.
-     */
+
+    //Constructor that takes an image filename as the argument.
+
     Sprite(String filename) {
         setImage(filename);
     }
 
 
-    /*
-    Method to set the image variable.
-     */
+
+    //Method to set the image variable.
+
     void setImage(String filename) {
         this.filename = filename;
 
@@ -126,10 +126,10 @@ class Sprite {
     }
 
 
-    /*
-    Moves character by adding the
-    direction to the location.
-     */
+
+    //Moves character by adding the
+    //direction to the location.
+
     void move() {
         xloc += xdir;
         yloc += ydir;
@@ -154,9 +154,9 @@ class Sprite {
     }
 
 
-    /*
-    Method to draw sprite onto JPanel.
-     */
+
+    //Method to draw sprite onto JPanel.
+
     void paint(Graphics g, JPanel panel) {
         if (show) {
             if (image == null)
