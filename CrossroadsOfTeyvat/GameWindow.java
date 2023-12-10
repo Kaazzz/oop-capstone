@@ -3,9 +3,9 @@ package CrossroadsOfTeyvat;
 import javax.swing.*;
 
 
-/*/
- * Window that holds the Display JPanel.
- */
+
+//  Window that holds the Display JPanel.
+
 public class GameWindow extends JFrame {
 
     //Variable for final JFrame size.
@@ -13,9 +13,9 @@ public class GameWindow extends JFrame {
     private final int WIDTH = 815;
 
 
-    /**
-     * Default constructor.
-     */
+
+     // Default constructor.
+
     GameWindow(boolean pause) {
 
         //Set the title.
@@ -47,7 +47,6 @@ public class GameWindow extends JFrame {
      * Main constructor to start program.
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
         //Pause game if first run.
         final boolean pause = true;
