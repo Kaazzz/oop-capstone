@@ -37,9 +37,9 @@ class ManageObstacles {
         return Fireball;
     }
 
-    /*
-    Method to return random Fireball color.
-     */
+
+    //Method to return random Fireball color.
+
     String randomFireball(String dir) {
 
         //Fireball color variables.
@@ -73,6 +73,7 @@ class ManageObstacles {
                 case 7:
                     FireballImage = "\\Fireball_Left\\Fireball_Left_Purple.png";
                     break;
+
             }
         }
 
@@ -109,9 +110,9 @@ class ManageObstacles {
         return FireballImage;
     }
 
-    /*
-    Method that creates and resets Pillar on the track strip.
-     */
+
+    //Method that creates and resets Pillar on the track strip.
+
     Sprite setPillar(int stripYLoc) {
 
         //Makes sprite.
@@ -136,9 +137,9 @@ class ManageObstacles {
         return train;
     }
 
-    /*
-    Method to return a random colored train.
-     */
+
+    //Method to return a random colored train.
+
 
     String randomPillar() {
 
