@@ -52,7 +52,7 @@ class Sprite {
 
 
     //Constructor that takes the location
-    as the argument.
+    //as the argument.
 
     public Sprite(int xloc, int yloc) {
         this.xloc = xloc;
