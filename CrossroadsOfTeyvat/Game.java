@@ -100,8 +100,8 @@ class Game extends JPanel implements ActionListener {
         add(startButton);
         add(controlsButton);
 
-        startButton.setBounds(233, 405, 318, 106);
-        controlsButton.setBounds(316, 520, 158, 65);
+        startButton.setBounds(244, 330, 318, 106);
+        controlsButton.setBounds(326, 450, 158, 65);
 
 
         //Create key listener for character.
@@ -307,7 +307,9 @@ class Game extends JPanel implements ActionListener {
         //Show message dialog with controls.
         else if (e.getSource() == controlsButton) {
 
-            JOptionPane.showMessageDialog(null, "Arrow Keys:  Move the Character." +
+                playAudio("Sounds/ControlEffect.wav");
+
+                JOptionPane.showMessageDialog(null, "Arrow Keys:  Move the Character." +
                     "\nCtrl:  Activates Skill: 3 seconds of Invincibility only 3 times per game." +
                     "\n         (Makes the Character pass through any object)" +
                     "\nShift:  Pause / Resume the game." +
