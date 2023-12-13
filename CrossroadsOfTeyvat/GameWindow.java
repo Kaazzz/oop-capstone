@@ -42,7 +42,6 @@ public class GameWindow extends JFrame {
 
     }
 
-
       //Main constructor to start program.
     public static void main(String[] args) {
 

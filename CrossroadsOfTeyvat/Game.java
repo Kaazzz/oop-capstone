@@ -454,7 +454,6 @@ class Game extends JPanel implements ActionListener {
     }
 
 
-
      //Method that prevent hero from moving on trees, and checks
      //for death with water, pillar, or fireballs.
 

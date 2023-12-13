@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>CrossroadsOfTeyvat</OriginalElement>
+  <nodes>
+    <node x="-406.4829353406855" y="2403.269015344447">CrossroadsOfTeyvat.Fireball_Right</node>
+    <node x="422.99433510522033" y="1432.5339382441946">CrossroadsOfTeyvat.Score</node>
+    <node x="32.12419077735602" y="1687.8849638641552">CrossroadsOfTeyvat.Game</node>
+    <node x="209.19898201823196" y="2342.884889940537">CrossroadsOfTeyvat.Game.KeyPressing</node>
+    <node x="1.0930758994704775" y="1404.6854571093704">CrossroadsOfTeyvat.TerrainGenerator</node>
+    <node x="-406.4829353406855" y="2357.8417425719495">CrossroadsOfTeyvat.Fireball_Left</node>
+    <node x="-406.4829353406857" y="2219.208038256322">CrossroadsOfTeyvat.Misc</node>
+    <node x="-328.4829353406856" y="1177.5267499369766">CrossroadsOfTeyvat.Sprite</node>
+    <node x="-410.9829353406856" y="2448.6962881169443">CrossroadsOfTeyvat.Pillar</node>
+    <node x="-322.4829353406856" y="1776.3365297262928">CrossroadsOfTeyvat.GameWindow</node>
+    <node x="613.9943351052203" y="1583.562815324486">CrossroadsOfTeyvat.ManageObstacles</node>
+    <node x="-406.4829353406856" y="2311.6305078000737">CrossroadsOfTeyvat.Character</node>
+    <node x="-406.4829353406856" y="2265.419273028198">CrossroadsOfTeyvat.Sounds</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.TerrainGenerator" relationship="TO_ONE">
+      <point x="14.999809222643975" y="-273.0" />
+      <point x="181.12400000000002" y="1460.5818942587712" />
+      <point x="111.58657048817687" y="1460.5818942587712" />
+      <point x="-81.0065054112936" y="94.5" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.Score" relationship="TO_ONE">
+      <point x="133.95706777451682" y="26.03083767212479" />
+      <point x="936.0769670935415" y="1986.91580153628" />
+      <point x="936.0769670935415" y="1489.5339382441946" />
+      <point x="95.5" y="0.0" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.TerrainGenerator" relationship="CREATE">
+      <point x="92.53326343189225" y="-273.0" />
+      <point x="258.6574542092483" y="1460.5818942587712" />
+      <point x="189.12002469742515" y="1460.5818942587712" />
+      <point x="-3.473051202045326" y="94.5" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game.KeyPressing" target="CrossroadsOfTeyvat.Game" relationship="INNER_CLASS">
+      <point x="32.24408238879241" y="-57.0" />
+      <point x="354.4430644070244" y="2432.4790988613136" />
+      <point x="166.12419077735603" y="2432.4790988613136" />
+      <point x="0.0" y="272.9999999999998" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.Game.KeyPressing" relationship="CREATE">
+      <point x="15.000000000000014" y="272.9999999999998" />
+      <point x="181.12419077735603" y="2419.8172566423355" />
+      <point x="369.4430644070244" y="2419.8172566423355" />
+      <point x="47.24408238879242" y="-57.0" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.ManageObstacles" target="CrossroadsOfTeyvat.Sprite" relationship="CREATE">
+      <point x="3.29064585002925E-5" y="-81.00017275514404" />
+      <point x="728.4943680116788" y="1341.2621379270065" />
+      <point x="-34.97105331386848" y="1341.2621379270065" />
+      <point x="-34.97105331386848" y="1381.527197382859" />
+      <point x="-113.49993086598258" y="4.474458824006433E-4" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.Sprite" relationship="TO_MANY">
+      <point x="-134.0" y="0.0" />
+      <point x="-75.48766979155647" y="1960.8849638641552" />
+      <point x="-75.48766979155647" y="1473.7105358893232" />
+      <point x="-220.36298853987873" y="1473.7105358893232" />
+      <point x="-220.36298853987873" y="1366.527197382859" />
+      <point x="-113.5" y="-14.9995525541176" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.ManageObstacles" relationship="CREATE">
+      <point x="133.95706777451682" y="-39.69819215794814" />
+      <point x="728.4943351052203" y="1921.186771706207" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.GameWindow" relationship="CREATE">
+      <point x="-138.59822735545742" y="89.00895973292404" />
+      <point x="-223.48293534068557" y="2049.8939235970793" />
+      <point x="0.0" y="45.0" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.GameWindow" target="CrossroadsOfTeyvat.Game" relationship="CREATE">
+      <point x="15.0" y="45.0" />
+      <point x="-208.48293534068557" y="2021.7564964437947" />
+      <point x="-140.8492215277202" y="60.871532579639506" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.Sprite" relationship="CREATE">
+      <point x="-60.16304215599382" y="-270.0171021211595" />
+      <point x="105.96114862136221" y="1640.785210486763" />
+      <point x="-34.97105331386848" y="1640.785210486763" />
+      <point x="-34.97105331386848" y="1381.527197382859" />
+      <point x="-113.49993086598258" y="4.474458824006433E-4" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.ManageObstacles" relationship="TO_ONE">
+      <point x="133.05667010561172" y="-8.184273746269355" />
+      <point x="882.0356510993809" y="1952.7006901178859" />
+      <point x="882.0356510993809" y="1694.9886896180321" />
+      <point x="119.2015259987096" y="30.42587429354603" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.TerrainGenerator" target="CrossroadsOfTeyvat.Sprite" relationship="CREATE">
+      <point x="-191.4995054112936" y="-4.441220000899193E-4" />
+      <point x="192.59307589947048" y="1499.1850129873703" />
+      <point x="192.59307589947048" y="1381.527197382859" />
+      <point x="-113.49993086598258" y="4.474458824006433E-4" />
+    </edge>
+    <edge source="CrossroadsOfTeyvat.Game" target="CrossroadsOfTeyvat.Score" relationship="CREATE">
+      <point x="134.0" y="-78.40371519828705" />
+      <point x="545.9810984272709" y="1882.4812486658682" />
+      <point x="27.486763322050592" y="57.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.45491010710642715" showDependencies="true" x="237.21982823128894" y="1818.5974329926999" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
