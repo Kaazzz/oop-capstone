@@ -414,7 +414,7 @@ class Game extends JPanel implements ActionListener {
                 break;
             case "tooFarUp":
                 playAudio("Sounds/Jean3.wav");
-                JOptionPane.showMessageDialog(null, "You left the game!" + "\nScore: " + score);
+                JOptionPane.showMessageDialog(null, "You left Teyvat!" + "\nScore: " + score);
                 break;
             case "fireball":
                 playAudio("Sounds/Jean2.wav");
@@ -422,7 +422,7 @@ class Game extends JPanel implements ActionListener {
                 break;
             case "pillar":
                 playAudio("Sounds/Jean1.wav");
-                JOptionPane.showMessageDialog(null, "You got hit by a pillar!" + "\nScore: " + score);
+                JOptionPane.showMessageDialog(null, "You got hit by Zhongli's pillar!" + "\nScore: " + score);
                 break;
         }
 
@@ -1040,6 +1040,7 @@ class Game extends JPanel implements ActionListener {
                     break;
                 case KeyEvent.VK_UP:
                     if (!press) {
+                        playAudio("Sounds/Jump2.wav");
                         up = 10;
                         press = true;
                     }

@@ -11,7 +11,7 @@ import java.awt.*;
 //Class that creates a sprite with an image, location,
 //directional movement and a collision method.
 
-class Sprite {
+class  Sprite {
 
     //Sprite location.
     private double xloc, yloc;

@@ -10,7 +10,7 @@ public class GameWindow extends JFrame {
 
     //Variable for final JFrame size.
     private final int HEIGHT = 840;
-    private final int WIDTH = 815;
+    private final int WIDTH = 814;
 
 
 
@@ -31,7 +31,7 @@ public class GameWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //set resize.
-        setResizable(false);
+        setResizable(true);
 
         //Add panel to frame.
         add(new Game(pause));
